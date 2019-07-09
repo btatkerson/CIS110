@@ -34,11 +34,11 @@ def main():
         if 22+d+e>31:
             day=(22+d+e)-31
             month=month+"April"
-            print("Easter in",year,"is be on",month,day)
+            print("Easter in",year,"is on",month,day)
             classSignature()
         else:
             day=(22+d+e)
             month=month+"March"
-            print("Easter in",year,"is be on",month,day)
+            print("Easter in",year,"is on",month,day)
             classSignature()
 main()
