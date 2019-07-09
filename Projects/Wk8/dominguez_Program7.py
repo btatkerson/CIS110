@@ -6,10 +6,6 @@ Date Created:7/9/19
 Notes of Interest:none
 '''
 import time
-import random
-import math
-nums=[]
-squaredList=[]
 #Function to print the class signature
 def classSignature():
 	print("----------------------------------------")
