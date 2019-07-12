@@ -14,27 +14,32 @@ def classSignature():
 	print(time.asctime(time.localtime(time.time())))
 
 def main():
-    print("This program calculates easter in a given year.\n")
-    year=int(input("Please enter a year between the range of 1900-2099:\n"))
-    month=""
-    if year>2099 or year<1900:
-        print("This year is out of range.")
-        classSignature()
-    else:
-        a=year%19
-        b=year%4
-        c=year%7
-        d=(19*a+24)%30
-        e=(2*b+4*c+6*d+5)%7
+	print("This program calculates easter in a given year.\n")
+	year=int(input("Please enter a year between the range of 1900-2099:\n"))
+	month=""
+	brokenYears=[1954,1981,2049,2076]
+	brokenYear=0
+	if year>2099 or year<1900:
+		print("This year is out of range.")
+		classSignature()
+	for i in brokenYears:
+		if i==year:
+			brokenYear=7
+	else:
+		a=year%19
+		b=year%4
+		c=year%7
+		d=(19*a+24)%30
+		e=(2*b+4*c+6*d+5)%7
 
-        if 22+d+e>31:
-            day=(22+d+e)-31
-            month=month+"April"
-            print("Easter in",year,"is on",month,day)
-            classSignature()
-        else:
-            day=(22+d+e)
-            month=month+"March"
-            print("Easter in",year,"is on",month,day)
-            classSignature()
+		if 22+d+e>31:
+			day=(22+d+e)-31-brokenYear
+			month=month+"April"
+			print("Easter in",year,"is on",month,day)
+			classSignature()
+		else:
+			day=(22+d+e)-brokenYear
+			month=month+"March"
+			print("Easter in",year,"is on",month,day)
+			classSignature()
 main()
