@@ -22,18 +22,22 @@ def windChill(t, v):
 		return(math.ceil(a))
 
 def main():
-	temperatures=[60,50,40,30,20,10,0,-10,-20]
+	temperatures=[ 60, 50, 40, 30, 20, 10,0, -10, -20]
 	windSpeeds=5
 	count=0
-	print("________________Temperaratures_(F)_______________")
-	print(" X ",temperatures)
+	print("\n")
+	print("This program prints a formatted table of wind chill values.\n")
+	print("====================Temperaratures_(F)==========================")
+	print("w_mph|",str(temperatures).replace(","," | "))
+	print("================================================================")
 	for i in range(10):
 		tempRow=[windSpeeds]
 		for i in range(9):
 			newValue=windChill(int(temperatures[count]),windSpeeds)
 			tempRow.append(newValue)
 			count=count+1
-		print(tempRow)
+		print(" ",str(tempRow).replace(","," | "))
+		print("________________________________________________________________")
 		count=0
 		windSpeeds=windSpeeds+5
 	print("\n")
